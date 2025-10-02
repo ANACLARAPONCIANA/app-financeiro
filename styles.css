@@ -1,0 +1,186 @@
+/* ===== Reset e base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  color: #333;
+  padding: 10px;
+}
+
+/* ===== Header ===== */
+header {
+  background: var(--accent-color, #2b8df7);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+/* ===== Botões ===== */
+button {
+  background: var(--accent-color, #2b8df7);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d6ed8;
+}
+
+/* ===== Layout principal ===== */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+section {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* ===== Inputs ===== */
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* ===== Tabela ===== */
+table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background: #2b8df7;
+  color: white;
+}
+
+/* ===== Calendário ===== */
+#calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#month-year {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.calendar-cell {
+  background: #fafafa;
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  cursor: pointer;
+}
+
+.calendar-cell:hover {
+  background: #2b8df7;
+  color: white;
+}
+
+.calendar-cell.small {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+.calendar-cell.has-reminder {
+  background: #ffe599;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.calendar-cell.selected {
+  background: #2b8df7;
+  color: white;
+}
+
+/* ===== Lembretes ===== */
+.reminders {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reminder-item {
+  background: #f9f9f9;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ===== Formulários ===== */
+.form-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 680px) {
+  main {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+}

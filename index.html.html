@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Financeiro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2b8df7">
+</head>
+<body>
+    <header>
+        <h1>App Financeiro</h1>
+        <div class="top-row">
+            <div class="balance">Saldo: <strong id="balance">R$ 0,00</strong></div>
+            <button id="enable-notifications">Ativar Notificações</button></div>
+    </header>
+    <main>
+        <section class="left">
+            <h2>Adicionar Transação</h2>
+            <form id="tx-form">
+                <input type="text" id="tx-desc" placeholder="Descrição" required>
+                <input type="number" id="tx-amount" placeholder="Valor (ex: 100 ou -50)" step="0.01" required>
+                <input type="date" id="tx-date" required>
+                <button type="submit">Adicionar</button>
+            </form>
+            <h2>Transações</h2>
+            <ul id="tx-list" class="tx-list"></ul>
+
+            <h2>Planilha de Transações</h2>
+            <table id="tx-table">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            </section>
+        <section class="right">
+            <h2>Agenda / Calendário</h2>
+            <div id="calendar-controls">
+                <button id="prev-month"><</button>
+                <div id="month-year"></div>
+                <button id="next-month">></button></div>
+                <div id="calendar-grid" class="calendar-grid"></div>
+                <div id="reminders-panel">
+                    <h3>Lembretes: <span id="reminder-date">-</span></h3>
+                    <ul id="reminder-list" class="reminder-list"></ul>
+                    <form id="reminder-form">
+                        <input type="text" id="reminder-title" placeholder="Titulo do Lembrete" required>
+                        <input type="time" id="reminder-time" required>
+                        <button type="submit">Adicionar Lembrete</button>
+                    </form>
+                </div>
+        </section>    
+    </main>
+    <footer> 
+        <small>Dados armazenados localmente (locasStorage).</small>
+
+    </footer>
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+            .then(() =>console.log('Service Worker registrado.') )
+            .catch(err => console.error('SW falhou:', err));
+        }
+    </script>
+    
+</body>
+</html>
